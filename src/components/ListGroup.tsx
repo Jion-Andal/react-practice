@@ -1,12 +1,25 @@
 function ListGroup() {
+  let items = ["Namunga", "Namuco", "Masaya", "Bagong Pook", "Quilib"];
+  // items = [];
+
+  const headingText = <h1>List</h1>;
+
+  const noItems = <p>No items found</p>;
+
+  const mapItems = () => {
+    return items.map((item) => <li key={item}>{item}</li>);
+  };
+
   return (
-    <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
-    </ul>
+    // Fragments
+    <>
+      {headingText}
+
+      {/* If statement is true, make the code after && */}
+      {/* If false, return none */}
+      {items.length === 0 && noItems}
+      <ul className="list-group">{mapItems()}</ul>
+    </>
   );
 }
 
